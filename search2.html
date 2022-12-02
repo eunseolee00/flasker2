@@ -44,6 +44,58 @@
 	</form>
 
 
+	<h1> Search Average for Application Type </h1>
+	<form action="{{ url_for('search2')}}"method="POST">
+		{{ form5.hidden_tag() }}
+
+
+		{{form5.attribute.label(class="form-label")}} 
+		{{ form5.attribute(class="form-control") }} 
+
+		{{form5.types.label(class="form-label")}} 
+		{{ form5.types(class="form-control") }}
+
+		<br/>
+
+		{{ form5.submit5(class="btn btn-secondary") }}
+
+	</form>
+
+
+	<h1> Search Surgeons for Animal </h1>
+	<form action="{{ url_for('search2')}}"method="POST">
+		{{ form6.hidden_tag() }}
+
+
+		{{form6.animal.label(class="form-label")}} 
+		{{ form6.animal(class="form-control") }} 
+
+		<br/>
+
+		{{ form6.submit6(class="btn btn-secondary") }}
+
+	</form>
+
+
+	<h1> Count of Animals & Diagnoses/Allergies </h1>
+	<form action="{{ url_for('search2')}}"method="POST">
+		{{ form7.hidden_tag() }}
+
+
+		{{form7.counts.label(class="form-label")}} 
+		{{ form7.counts(class="form-control") }} 
+
+		
+		{{form7.types.label(class="form-label")}} 
+		{{ form7.types(class="form-control") }} 
+
+		<br/>
+
+		{{ form7.submit7(class="btn btn-secondary") }}
+
+	</form>
+
+
 <br/><br/>
 	<h2> Latest Search: </h2>
 	<p> {{searched}} </p>
