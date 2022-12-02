@@ -16,12 +16,9 @@
 		{{ form3.hidden_tag() }}
 
 
-		{{form3.age1.label(class="form-label")}}
-		{{form3.age1(class="form-control")}}
+		{{form3.age1.label(class="form-label")}} {{form3.age1(class="form-control")}}
 
-
-		{{form3.age2.label(class="form-label")}}
-		{{form3.age2(class="form-control")}}
+		{{form3.age2.label(class="form-label")}} {{form3.age2(class="form-control")}}
 		<br/>
 
 		{{ form3.submit3(class="btn btn-secondary") }}
@@ -34,7 +31,13 @@
 		{{ form4.hidden_tag() }}
 
 
-		{{form4.animal.label(class="form-label")}} {{ form4.animal(style='height: 40px;') }} {{form4.email.label(class="form-label")}} {{ form4.email(style='height: 40px;') }}
+		{{form4.animal.label(class="form-label")}} 
+		{{ form4.animal(class="form-control") }} 
+
+		{{form4.email.label(class="form-label")}} 
+		{{ form4.email(class="form-control") }}
+
+		<br/>
 
 		{{ form4.submit4(class="btn btn-secondary") }}
 

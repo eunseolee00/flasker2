@@ -1283,11 +1283,11 @@ def search2():
 			rows = cursor.fetchall()
 
 			flash("Search was Successful!" )
-			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything)
+			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything, rows = rows)
 		except Exception as e:
 			flash("Search could not be completed." )
 
-			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything)
+			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything, exception = e)
 
 	return render_template("search2.html", form3 = form3, form4 = form4, searched = anything)
 
@@ -1296,17 +1296,17 @@ def search2():
 		try:
 			animal = form4.animal.data
 			email = form4.email.data
-			command = "SELECT * FROM Application JOIN Contact ON application.candidate_id = contact.id JOIN Animal ON Animal.id = Application.animal_id WHERE Animal.species = '" 
-			+ str(animal) + "' AND Contact.email LIKE '%" + str(email) + "%'"
+			command= "SELECT id FROM Animal"
+			# command2 = "SELECT * FROM Application JOIN Contact ON application.candidate_id = contact.id JOIN Animal ON Animal.id = Application.animal_id WHERE Animal.species = '" + str(animal) + "' AND Contact.email LIKE '%" + str(email) + "%'"
 
 			cursor.execute(command)
-			rows = cursor.fetchall()
+			rows2 = cursor.fetchall()
 
 			flash("Search was Successful!" )
-			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything)
+			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything, rows2 = rows2)
 		except Exception as e:
 			flash("Search could not be completed." )
-			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything)
+			return render_template("search2.html", form3 = form3, form4 = form4, searched = anything, exception = e)
 
 	return render_template("search2.html", form3 = form3, form4 = form4, searched = anything)
 
